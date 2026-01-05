@@ -32,20 +32,21 @@
 
 ## 💻 在线编辑与编译 (GitHub Codespaces)
 
-如果您希望拥有**完整的 VS Code 编辑体验**（语法高亮、文件管理），但又不想在本地安装几十 GB 的 LaTeX 环境，可以使用 GitHub Codespaces。
+如果您希望拥有**完整的 VS Code 编辑体验**（语法高亮、文件管理），不用每次修改都提交到 GitHub 通过cicd进行编译，可以使用 GitHub Codespaces 在线编辑和编译。
 
 ### 使用步骤：
 
 1.  **启动环境**：点击页面顶部的 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/maksymilan/zju-resume-template) 徽章。
-2.  **等待初始化**：GitHub 会为您启动一个云端开发环境（首次启动会自动安装 LaTeX 依赖，可能需要 2-3 分钟，请耐心等待）。
+2.  **等待初始化**：GitHub 会为您启动一个云端开发环境（首次启动会自动安装 LaTeX 依赖，可能需要 3-5 分钟，请耐心等待）。
 3.  **开始编辑**：环境启动后，您将看到一个浏览器版的 VS Code。
 4.  **编译预览**：
     *   打开终端 (Terminal) -> 新建终端。
-    *   输入 `make` 命令即可编译。
+    *   输入 `make clean` 清除已有的CV文件。
+    *   输入 `make` 编译生成 PDF。
     *   在左侧文件列表中右键点击生成的 `CV.pdf`，选择 "Download" 下载到本地。
 
 ## 📝 环境与依赖 (Environment & Dependencies)
-
+如果您想在本地编译本项目，请确保满足以下环境要求：
 ### 1. TeX 发行版 (Distribution)
 
 * **建议使用**: `TeX Live 2024`
