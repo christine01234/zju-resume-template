@@ -96,60 +96,46 @@
   \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
   \end{tikzpicture}%
-\centerline{\LARGE\bfseries{胡豆}} 
+\centerline{\LARGE\bfseries{吴秋丹}} 
 
-\centerline{\normalsize{\faPhone\ 111-1111-1111 \quad \faEnvelopeO\ \href{mailto:3230100000@zju.edu.cn}{3230100000@zju.edu.cn}}} 
-
-\centerline{\normalsize{\faGithubSquare\ \href{https://github.com/maksymilan}{https://github.com/maksymilan} \quad \faRssSquare\ \href{https://maksymilan.github.io/}{https://maksymilan.github.io}}} 
+\centerline{\normalsize{\faPhone\ 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
     
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}    
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 学业成绩}    
 \textbf{浙江大学} \hfill 2023.9 -- 至今\\[0.5em] % 标题和正文间加一点距离
-CC98烂坑挖掘工程与技术\quad 大二 
+环境科学辅修大数据与数据科学\quad 大三 
 \begin{itemize}[nosep]
-    \item 相关课程：《烂坑挖掘及基础》、《高级挖坑技巧》、《烂坑数理统计》
+    \item 均绩：4.73，每年专业排名均为第一
+    \item 英语水平：CET-6：604，托福108
 \end{itemize}
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 项目经历}
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研经历}
 
 % --- 第一个项目 ---
 % 将标题行末尾的 \\ 替换为 \titlebreak 命令
-\textbf{98烂坑风控与可视化作战平台} \hfill 2024.08 -- 至今 \titlebreak
-项目描述：为维护cc98社区的讨论纯度、净化“心灵之约”版块风气，本项目旨在对“烂坑”进行科学、严谨的量化分析，并引入\textbf{大语言模型(LLM)}对烂坑帖进行\textbf{自动化情感极性与“离谱指数”标注}。
+\textbf{srtp蒙特利尔议定书对全球微塑料分布的影响及建模——项目负责人} \hfill 2024.08 -- 至今 \titlebreak
+项目描述：总体目标为评估《蒙特利尔议定书》实施对全球微塑料污染的间接影响，重点关注紫外线辐射水平的变化及其对塑料降解速率和微塑料生成的影响。首先，收集全球紫外线辐射数据，并分析臭氧层变化对地表紫外线辐射的长期影响，以形成高分辨率的网格化紫外线辐射数据集。其次，收集不同紫外线强度下常见塑料（如聚乙烯、聚丙烯等）的降解速率和微塑料生成数据，以量化紫外线在塑料降解过程中的作用，构建全球微塑料污染的空间分布，并采用数学建模方法，建立\textbf{紫外线辐射—塑料降解—微塑料生成的过程模型}。最后，通过情景分析，设定有无《蒙特利尔议定书》实施的两种情境，对未来微塑料污染的发展趋势进行预测，量化该协议对全球微塑料污染的环境效益。
 % 在 itemize 的选项中，使用 topsep=\intraProjectListTopSep 来控制上边距
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{数据与后端}：运用 \textbf{Go} 语言及 \textbf{GORM} 框架，实现对全站“烂坑”帖的7x24小时全天候\textbf{抓取}与\textbf{入库}(MySQL)。
-    \item \textbf{可视化前端}：采用原生 \textbf{HTML/CSS/JS} 构建了“烂坑”实时监控\textbf{作战大屏}。实现了坑主成分分析、挖坑热力图、年度烂坑王榜单等\textbf{可视化图表}，并通过 \textbf{AJAX} 异步刷新，确保数据洞察的实时性。
-    \item \textbf{核心产出}：全面掌握了从\textbf{数据采集、清洗、LLM标注到可视化分析}的“反烂坑”全链路技术。
+    \item \textbf{核心产出}：掌握了从\textbf{数据采集、清洗、文献阅读、数学建模}等科研方法；撰写蒙特利尔议定书对微塑料污染的环境效益评估1份；学术论文一篇。
+
 \end{itemize}
 
 % 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
 % --- 第二个项目 ---
-\textbf{AIGC驱动的超进化自动挖坑机 (Agent)} \hfill 2025.02 -- 至今 \titlebreak
-项目描述：为探索心灵版规的边界，以及测试版主锁沉反应速度的极限，本项目基于\textbf{多智能体协作(MCP)与LLM}技术，开发了一款能\textbf{自主“挖坑”与“互坑”}的AI Agent。
-\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{并发与调度}：后端采用 \textbf{Go} 语言，充分利用 \textbf{Goroutine} 和 \textbf{Channel} 的高并发模型，模拟\textbf{用户并发在线}，执行定时挖坑，确保挖坑行动的\textbf{隐蔽性}与\textbf{高效性}。
-    \item \textbf{实时监控与响应}：运用 \textbf{WebSocket} 协议实现了对目标帖子的\textbf{实时监听与交互}。确保在烂坑被识破的第一时间，Agent能光速完成\textbf{“lktp”}或\textbf{反向钓鱼}操作，展现出极高的AI博弈能力。
-    \item \textbf{可视化GUI}：前端使用 \textbf{React} 框架构建了\textbf{后台管理的可视化面板 (Admin Panel)}。可一键下达挖坑指令、动态调整Agent的\textbf{指令}、并实时监控数据。
-\end{itemize}
+\textbf{大模型的体验计算与设计课题组实习——界面信息一致性测评} \hfill 2025.11 -- 至今 \titlebreak
+项目描述：参与大模型体验计算与设计课题组实习，专注于界面信息一致性测评任务。负责构建多模态测试数据集，设计一致性评估指标，并利用大模型对界面文案、标签及交互提示与设计规范进行自动化对比分析，识别信息不一致问题。通过定量评估与案例研究，总结出典型不一致类型，为模型迭代和设计优化提供数据支持，有效提升了界面信息的一致性与用户体验。
 
-\section{\makebox[\widthof{\faCogs}][c]{\color{CVBlue}\faCogs}\ 技术栈}
-\begin{itemize}[nosep]
-    \item \textbf{编程语言：} \textbf{Go}, Python, C++
-    \item \textbf{开发工具：} SSH, Git, Vim, MakeFile,LaTex
-    \item \textbf{操作系统：} Linux
-\end{itemize}
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 获奖情况}
 \begin{itemize}
-    \item CC98年度用户 \hfill 2023.12
+    \item 全国大学生数学竞赛初赛（非数学A类）三等奖 \hfill 2023.12
+    \item 浙江省物理创新竞赛（理论）三等奖 \hfill 2023.12
+    \item 美国大学生数学建模比赛 \hfill 2026.1
+    \item 南都二等奖学金 \hfill 2024.10
+    \item 校二等奖学金 \hfill 2024.10
+    \item 省政府奖学金 \hfill 2025.10
+    \item 环境科技奖学金 \hfill 2025.10
     
-\end{itemize}
-    
-\section{\makebox[\widthof{\faInfo}][c]{\color{CVBlue}\faInfo}\ 其他}
-\begin{itemize}[parsep=0.5ex]
-    \item \textbf{技术博客：} \href{https://maksymilan.github.io/}{https://maksymilan.github.io/}
-    \item \textbf{GitHub：} \href{https://github.com/maksymilan}{https://github.com/maksymilan} 
-    \item \textbf{英语水平：} CET-4, CET-6
 \end{itemize}
 \end{document}
