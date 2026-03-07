@@ -83,23 +83,25 @@
 [{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
 \titlespacing*{\section}{0cm}{*1.6}{*1.2}
 
+
+
 \begin{document}
 \pagenumbering{gobble}
 
-% 照片和校徽定位（保留原逻辑）
+%%%% 利用tikz来定位照片
 \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north east] at ($(current page.north east)+(-2cm,-0.8cm)$) {\includegraphics[height=3cm]{zhengjianzhao.jpg}};
-\end{tikzpicture}%
-\begin{tikzpicture}[remember picture, overlay] 
+  \end{tikzpicture}%
+  %%%% 利用tikz来定位学校Logo，这里只在第一页显示
+  \begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
-\end{tikzpicture}%
-
+  \end{tikzpicture}%
 \centerline{\LARGE\bfseries{Wu Qiudan}} 
 
-\centerline{\normalsize{\faPhone\ +86 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
+\centerline{\normalsize{\faPhone\ 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
     
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ Academic Performance}    
-\textbf{Zhejiang University} \hfill Sep. 2023 -- Present\\[0.5em]
+\textbf{Zhejiang University} \hfill 2023.9 -- Present\\[0.5em] % 标题和正文间加一点距离
 Environmental Science (Minor in Big Data and Data Science)\quad Junior 
 \begin{itemize}[nosep]
     \item Overall GPA: 4.73/5.0, ranked \textbf{1st} in the major for consecutive academic years; English Proficiency: CET-6: 604, TOEFL: 108
@@ -108,25 +110,31 @@ Environmental Science (Minor in Big Data and Data Science)\quad Junior
 
 \section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ Research Experience}
 
-% 第一个项目
-\textbf{University-Level SRTP Project: Impact of the Montreal Protocol on Global Microplastic Distribution and Modeling – Project Leader} \hfill Aug. 2024 -- Present \titlebreak
-Project Description: Led the research project evaluating the indirect impacts of the Montreal Protocol on global microplastic pollution. Collected and analyzed global ultraviolet (UV) radiation data, and constructed a \textbf{high-resolution gridded UV radiation dataset} combined with ozone layer variation trends; Integrated experimental degradation data of common plastics (e.g., polyethylene, polypropylene) under different UV intensities, and established a \textbf{process model of UV radiation - plastic degradation - microplastic generation} via mathematical modeling methods; Conducted \textbf{scenario analysis} to compare future microplastic pollution trends with and without the Protocol, quantifying the environmental benefits of the agreement and providing scientific evidence for the evaluation of international environmental policies.
+% --- 第一个项目 ---
+% 将标题行末尾的 \\ 替换为 \titlebreak 命令
+\textbf{University-Level SRTP Project: Impact of the Montreal Protocol on Global Microplastic Distribution and Modeling – Project Leader} \hfill 2024.08 -- Present \titlebreak
+Project Description：Led the research project evaluating the indirect impacts of the Montreal Protocol on global microplastic pollution. Collected and analyzed global ultraviolet (UV) radiation data, and constructed a \textbf{high-resolution gridded UV radiation dataset} combined with ozone layer variation trends; Integrated experimental degradation data of common plastics (e.g., polyethylene, polypropylene) under different UV intensities, and established a \textbf{process model of UV radiation - plastic degradation - microplastic generation} via mathematical modeling methods; Conducted \textbf{scenario analysis} to compare future microplastic pollution trends with and without the Protocol, quantifying the environmental benefits of the agreement and providing scientific evidence for the evaluation of international environmental policies.
+% 在 itemize 的选项中，使用 topsep=\intraProjectListTopSep 来控制上边距
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{Key Outputs}: Mastered systematic research methodologies including \textbf{data collection, cleaning, literature review, mathematical modeling, and programming}; Compiled 1 environmental benefit assessment report on the Protocol’s impact on microplastic pollution; 1 academic paper in preparation.
+    \item \textbf{Key Outputs}： Mastered systematic research methodologies including \textbf{data collection, cleaning, literature review, mathematical modeling, and programming}; Compiled 1 environmental benefit assessment report on the Protocol’s impact on microplastic pollution.
 \end{itemize}
 
+\end{itemize}
+
+% 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
-% 第二个项目
-\textbf{Research Intern, Lab for Experience Computing and Design of Large Models: Interface Information Consistency Evaluation} \hfill Nov. 2025 -- Present \titlebreak
+% --- 第二个项目 ---
+\textbf{Research Intern, Lab for Experience Computing and Design of Large Models: Interface Information Consistency Evaluation} \hfill 2025.11 -- Present \titlebreak
 Project Description: Joined the Lab for Experience Computing and Design of Large Models as a research intern, mainly participating in the Interface Information Consistency Evaluation Project. The project aims to use large models to automatically compare and analyze copywriting, labels, interactive prompts of associated interfaces on major shopping platforms against design specifications, identify information inconsistency issues, and effectively improve interface information consistency and user experience. Assisted in constructing the test dataset, summarized typical types of inconsistency and established corresponding evaluation indicators; Iterated prompt engineering to improve the accuracy of large models in identifying interface information inconsistency. Additionally, learned the application of prompt engineering and LangGraph in the lab, and independently completed agent design using LangGraph.
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
     \item \textbf{Key Outputs}: Helped build a \textbf{test dataset for interface consistency} covering copywriting, labels, interactive prompts and other interface elements, laying a foundation for automated evaluation; Significantly improved programming capabilities and data-driven research skills.
 \end{itemize}
 
+% 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
-% 第三个项目
+% --- 第三个项目 ---
 \textbf{Time-Series Prediction Based on Liquid Neural Network} \hfill Currently in Full Progress \titlebreak
 Project Description: Fully advancing research on time-series prediction models based on Liquid Neural Network, focusing on model structure optimization and time-series data feature extraction, with a research paper to be completed soon.
 
@@ -139,5 +147,6 @@ Project Description: Fully advancing research on time-series prediction models b
     \item Nandu Second-Class Scholarship, University-Level Second-Class Scholarship \hfill Oct. 2024
     \item Zhejiang Provincial Government Scholarship, Environmental Science and Technology Scholarship \hfill Oct. 2025
 \end{itemize}
-
+    
+\end{itemize}
 \end{document}
