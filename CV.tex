@@ -134,8 +134,13 @@
 \projectsep
 
 % --- 第三个项目 ---
-\textbf{Patch-LNN：基于Liquid Neural Network的时间序列预测} \hfill 2026.1 -- 至今 \titlebreak
-项目描述：在经典 PatchTST 框架上引入 Liquid Neural Network（LNN/CfC），系统对比「带 Patch 的 Patch-LNN」与「不带 Patch 的 LNNLinear」在多种长序列预测数据集（如 ETTh1 等）上的表现，探索 Patch 分片与 LNN 的协同效果。设计并实现多种 LNN + Linear 组合与不带 Patch（LNNLinear）两条架构分支。
+\textbf{PatchTST-LNN：基于Liquid Neural Network的时间序列预测} \hfill 2026.1 -- 至今 \titlebreak
+项目描述： 提出 PatchTST-LNN 模型，在 PatchTST 框架下首次将 Transformer 编码器替换为液体神经网络（CfC单元，基于 ncps 库），保留 RevIN、Patch 划分与预测头等外围设计，实现高效、可解释的时序建模，并完成学术论文一篇。
+\begin{itemize}
+    \item \textbf{架构创新：} 设计 LNN 替代自注意力机制，降低计算复杂度，同时提升对非平稳时序的动态适应能力。
+    \item \textbf{系统消融实验：} 系统对比带 Patch（PatchTST-LNN）与不带 Patch（LNNLinear）、LNN 与多层 Linear 头（flatten / MLP）、前置 Linear 等组合，验证 Patch 结构与 LNN 的协同有效性。
+    \item \textbf{性能验证：} 在 ETTh1 / ETTh2 / ETTm1 等公开基准上全面评测，与 Transformer-based、Linear-based 等已发表强基线（如 PatchTST、DLinear、FEDformer）对比，本模型在多数预测长度下取得最优或领先结果，证明液体神经网络在时序预测中的优越性。
+\end{itemize}
 
 \section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 对外交流与获奖情况}
 \begin{itemize}
