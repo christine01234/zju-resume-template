@@ -1,155 +1,62 @@
-\documentclass[11pt]{article}
-
-
-\setlength{\parindent}{0pt}
-\usepackage{xltxtra}
-\usepackage{hyperref}
-\hypersetup{hidelinks}
-\usepackage{url}
-\urlstyle{tt}
-\usepackage{xcolor}
-\definecolor{CVBlue}{RGB}{23,110,191}
-\usepackage{calc}
-\usepackage{graphicx}
-\usepackage{tikz}
-\usetikzlibrary{calc}
-\usepackage{fontspec}
-\usepackage{xeCJK}
-\usepackage{enumitem}
-\CJKsetecglue{} %% 取消中文与数字之间的间隙
-
-
-%% 主文档字体设置
-\setmainfont[
-    Path = fonts/Main/,
-    Extension = .otf,
-    BoldFont = texgyretermes-bold.otf, % 加粗字体
-]{texgyretermes-regular.otf} % 正文字体
-
-% 中文字体设置
-\setCJKmainfont[
-    Path = fonts/hansans/,
-    Extension = .ttf,
-    BoldFont = NotoSansSC-Bold.ttf, % 加粗字体
-]{NotoSansSC-Regular.otf} % 正文字体
-
-
-\usepackage{relsize}
-\usepackage{xspace}
-
-% 使用 fontawesome（部分图标）
-\usepackage{fontawesome} 
-
-% A4纸，上下左右边距
-\usepackage[
-    a4paper,
-    left=1.2cm,
-    right=1.2cm,
-    top=1.5cm,
-    bottom=1cm,
-    nohead
-]{geometry}
-
-\renewcommand{\baselinestretch}{1.5} % 行间距设为1.5
-
-\usepackage{titlesec}
-\usepackage{enumitem}
-\setlist{noitemsep} % 取消列表项间的额外间距
-%\setlist{nosep} % 取消所有垂直间距
-\setlist[itemize]{topsep=0.25em, leftmargin=*}
-\setlist[enumerate]{topsep=0.25em, leftmargin=*}
-
-% --- 用于控制【不同项目之间】的垂直距离 ---
-\newlength{\interProjectSpacing}
-\setlength{\interProjectSpacing}{0.9em} % <--- 在此调整项目之间的距离
-\newcommand{\projectsep}{\vspace{\interProjectSpacing}}
-
-% --- 用于控制【项目标题】与下方【项目描述】的距离 ---
-\newlength{\intraProjectTitleSep}
-\setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
-\newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
-
-% --- 用于控制【项目描述】与下方【要点列表】的距离 ---
-\newlength{\intraProjectListTopSep}
-\setlength{\intraProjectListTopSep}{0.2em} % <--- 在此调整描述和列表的距离
-
-% =======================================================================
-
-
-\titleformat{\section}         % 定制 \section 命令 
-{\large\bfseries\raggedright} % 将 section 标题设置为大号、粗体且左对齐
-{}{0em}                      % 可用于为所有 section 添加前缀（如“章节...”）
-{}                           % 可用于在标题前插入代码
-[{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
-\titlespacing*{\section}{0cm}{*1.6}{*1.2}
-
-
-
 \begin{document}
 \pagenumbering{gobble}
 
-%%%% 利用tikz来定位照片
-%\begin{tikzpicture}[remember picture, overlay] 
-    %\node[anchor = north east] at ($(current page.north east)+(-2cm,-0.8cm)$) {\includegraphics[height=3cm]{zhengjianzhao.jpg}};
-  %\end{tikzpicture}%
-  %%%% 利用tikz来定位学校Logo，这里只在第一页显示
-  \begin{tikzpicture}[remember picture, overlay] 
+\begin{tikzpicture}[remember picture, overlay] 
     \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
-  \end{tikzpicture}%
-\centerline{\LARGE\bfseries{吴秋丹}} 
+\end{tikzpicture}%
 
-\centerline{\normalsize{\faPhone\ 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
+\centerline{\LARGE\bfseries{Qiudan Wu}} 
+
+\centerline{\normalsize{\faPhone\ +86 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
     
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 学业成绩}    
-\textbf{浙江大学} \hfill 2023.9 -- 至今\\[0.5em] % 标题和正文间加一点距离
-环境科学辅修大数据与数据科学\quad 大三 
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ Education}    
+
+\textbf{Zhejiang University} \hfill Sep 2023 -- Present\\[0.5em]
+B.S. in Environmental Science (Minor in Big Data and Data Science), Junior
+
 \begin{itemize}[nosep]
-    \item \textbf{均绩}: 4.73，每年专业排名均为第一； \textbf{英语水平}: 托福：108; CET-6：604
-    \item \textbf{核心课程}：《物理化学》（5.0）、《有机化学》（5.0）、《概率论与数理统计》（5.0）、《微积分》（5.0）、《线性代数》（5.0）、《数据结构》（4.8）、《常微分方程》（5.0）
+    \item \textbf{GPA}: 4.73/5.0, ranked 1st in major (consistently); \textbf{English}: TOEFL 108, CET-6: 604
+    \item \textbf{Core Courses}: Physical Chemistry (5.0), Organic Chemistry (5.0), Probability and Statistics (5.0), Calculus (5.0), Linear Algebra (5.0), Data Structures (4.8), Ordinary Differential Equations (5.0)
 \end{itemize}
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研经历}
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ Research Experience}
 
-% --- 第一个项目 ---
-% 将标题行末尾的 \\ 替换为 \titlebreak 命令
-\textbf{校级srtp蒙特利尔议定书对全球微塑料分布的影响及建模——项目负责人} \hfill 2024.08 -- 至今 \titlebreak
-项目描述：负责了评估《蒙特利尔议定书》对全球微塑料污染间接影响的研究项目。负责收集并分析全球紫外线辐射数据，结合臭氧层变化构建高分辨率网格化紫外线辐射数据集；收集全球影响微塑料降解的环境环境因子变量制作成数据集，通过机器学习建立环境因子与微塑料浓度关系模型，并建立紫外线辐射—塑料降解—微塑料生成的过程模型；通过TUV模型进行情景分析，对比有无议定书两种情境下的未来微塑料污染趋势，量化该协议对全球微塑料污染的环境效益，为国际环境政策评估提供科学依据。
-% 在 itemize 的选项中，使用 topsep=\intraProjectListTopSep 来控制上边距
+\textbf{Impact of the Montreal Protocol on Global Microplastic Distribution and Modeling (SRTP, PI)} \hfill Aug 2024 -- Present \titlebreak
+Investigated the indirect environmental impact of the Montreal Protocol on global microplastic pollution. Constructed high-resolution UV radiation datasets by integrating ozone layer dynamics. Built machine learning models linking environmental factors to microplastic concentration and developed a process-based model (UV radiation → plastic degradation → microplastic generation). Conducted scenario analysis using the TUV model.
+
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{核心产出}：掌握了从数据采集、清洗、文献阅读、数学建模、编程等科研方法与能力；撰写蒙特利尔议定书对微塑料污染的环境效益评估1份；学术论文一篇。
-
+    \item \textbf{Outputs}: One research report; one academic paper; developed skills in data processing, modeling, and scientific research workflows.
 \end{itemize}
 
-% 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
-% --- 第二个项目 ---
-\textbf{大模型的体验计算与设计课题组实习——界面信息一致性测评} \hfill 2025.11 -- 至今 \titlebreak
-项目描述：加入大模型体验计算与设计课题组实习，主要参与界面信息一致性测评项目，项目旨在利用大模型对各大购物平台相关联界面的文案、标签及交互提示与设计规范进行自动化对比分析，识别信息不一致问题，以此有效提升界面信息的一致性与用户体验。本人参与了测试数据集的构建，总结出典型不一致类型并一致性评估指标，以及迭代提示词以提高模型识别界面信息不一致性的准确率。此外，在课题组里学习了提示词工程与LangGraph的应用并利用LangGraph进行智能体设计。
+\textbf{LLM Experience Computing and Design Lab Internship – Interface Consistency Evaluation} \hfill Nov 2025 -- Present \titlebreak
+Participated in a project using large language models to automatically detect inconsistencies across e-commerce interfaces. Built evaluation datasets, defined inconsistency taxonomy, and improved model performance via prompt engineering. Applied LangGraph for agent design.
+
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{核心产出}：帮助构建了界面一致性测试数据集，涵盖文案、标签、交互提示等界面元素，为自动化测评提供基础；提升编程能力。
+    \item \textbf{Outputs}: Constructed UI consistency dataset; improved programming and LLM application skills.
 \end{itemize}
 
-% 使用 \projectsep 命令来分隔两个项目
 \projectsep
 
-% --- 第三个项目 ---
-\textbf{PatchTST-LNN：基于Liquid Neural Network的时间序列预测} \hfill 2026.1 -- 至今 \titlebreak
-项目描述： 提出 PatchTST-LNN 模型，在 PatchTST 框架下首次将 Transformer 编码器替换为液体神经网络（CfC单元，基于 ncps 库），保留 RevIN、Patch 划分与预测头等外围设计，实现高效、可解释的时序建模，并完成学术论文一篇。
+\textbf{PatchTST-LNN: Time Series Forecasting with Liquid Neural Networks} \hfill Jan 2026 -- Present \titlebreak
+Proposed PatchTST-LNN by replacing the Transformer encoder with Liquid Neural Networks (CfC units). Retained RevIN and Patch structure for efficient and interpretable time series modeling.
+
 \begin{itemize}
-    \item \textbf{架构创新：} 设计 LNN 替代自注意力机制，降低计算复杂度，同时提升对非平稳时序的动态适应能力。
-    \item \textbf{系统消融实验：} 系统对比带 Patch（PatchTST-LNN）与不带 Patch（LNNLinear）、LNN 与多层 Linear 头（flatten / MLP）、前置 Linear 等组合，验证 Patch 结构与 LNN 的协同有效性。
-    \item \textbf{性能验证：} 在 ETTh1 / ETTh2 / ETTm1 等公开基准上全面评测，与 Transformer-based、Linear-based 等已发表强基线（如 PatchTST、DLinear、FEDformer）对比，本模型在多数预测长度下取得最优或领先结果，证明液体神经网络在时序预测中的优越性。
+    \item \textbf{Architecture}: Replaced attention mechanism with LNN to reduce computational complexity and improve adaptability.
+    \item \textbf{Ablation Study}: Evaluated Patch vs non-Patch, LNN vs Linear heads, validating effectiveness.
+    \item \textbf{Performance}: Achieved competitive or state-of-the-art results on ETTh1, ETTh2, and ETTm1 benchmarks.
 \end{itemize}
 
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 对外交流与获奖情况}
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ Honors and Awards}
+
 \begin{itemize}
-    \item 新加坡南洋理工大学电子商务与社交媒体战略暑校 \hfill 2024.8
-    \item 全国大学生数学竞赛初赛（非数学A类）三等奖 \hfill 2023.12
-    \item 浙江省物理创新竞赛（理论）三等奖 \hfill 2023.12
-    \item 美国大学生数学建模比赛 \hfill 2026.1
-    \item 南都二等奖学金、校二等奖学金 \hfill 2024.10
-    \item 省政府奖学金、环境科技奖学金 \hfill 2025.10
-    
+    \item Summer Program, E-Commerce and Social Media Strategy, Nanyang Technological University \hfill Aug 2024
+    \item Third Prize, National Undergraduate Mathematics Competition (Non-Math A) \hfill Dec 2023
+    \item Third Prize, Zhejiang Provincial Physics Innovation Competition \hfill Dec 2023
+    \item Mathematical Contest in Modeling (MCM) \hfill Jan 2026
+    \item Second-Class Scholarship (Zhejiang University) \hfill Oct 2024
+    \item Provincial Government Scholarship; Environmental Science Scholarship \hfill Oct 2025
 \end{itemize}
+
 \end{document}
