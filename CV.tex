@@ -1,7 +1,7 @@
 \documentclass[11pt]{article}
 
-
 \setlength{\parindent}{0pt}
+
 \usepackage{xltxtra}
 \usepackage{hyperref}
 \hypersetup{hidelinks}
@@ -16,31 +16,29 @@
 \usepackage{fontspec}
 \usepackage{xeCJK}
 \usepackage{enumitem}
-\CJKsetecglue{} %% 取消中文与数字之间的间隙
+\CJKsetecglue{}
 
+%% =========================================================
+%% 字体设置：适用于字体文件直接放在 Overleaf 主目录的情况
+%% 主目录中需要包含以下四个字体文件：
+%% texgyretermes-regular.otf
+%% texgyretermes-bold.otf
+%% NotoSansSC-Regular.otf
+%% NotoSansSC-Bold.ttf
+%% =========================================================
 
-%% 主文档字体设置
 \setmainfont[
-    Path = fonts/Main/,
-    Extension = .otf,
-    BoldFont = texgyretermes-bold.otf, % 加粗字体
-]{texgyretermes-regular.otf} % 正文字体
+    BoldFont = texgyretermes-bold.otf
+]{texgyretermes-regular.otf}
 
-% 中文字体设置
 \setCJKmainfont[
-    Path = fonts/hansans/,
-    Extension = .ttf,
-    BoldFont = NotoSansSC-Bold.ttf, % 加粗字体
-]{NotoSansSC-Regular.otf} % 正文字体
-
+    BoldFont = NotoSansSC-Bold.ttf
+]{NotoSansSC-Regular.otf}
 
 \usepackage{relsize}
 \usepackage{xspace}
-
-% 使用 fontawesome（部分图标）
 \usepackage{fontawesome} 
 
-% A4纸，上下左右边距
 \usepackage[
     a4paper,
     left=1.2cm,
@@ -50,37 +48,30 @@
     nohead
 ]{geometry}
 
-\renewcommand{\baselinestretch}{1.5} % 行间距设为1.5
+\renewcommand{\baselinestretch}{1.5}
 
 \usepackage{titlesec}
 \usepackage{enumitem}
-\setlist{noitemsep} % 取消列表项间的额外间距
-%\setlist{nosep} % 取消所有垂直间距
+\setlist{noitemsep}
 \setlist[itemize]{topsep=0.25em, leftmargin=*}
 \setlist[enumerate]{topsep=0.25em, leftmargin=*}
 
-% --- 用于控制【不同项目之间】的垂直距离 ---
 \newlength{\interProjectSpacing}
-\setlength{\interProjectSpacing}{0.9em} % <--- 在此调整项目之间的距离
+\setlength{\interProjectSpacing}{0.9em}
 \newcommand{\projectsep}{\vspace{\interProjectSpacing}}
 
-% --- 用于控制【项目标题】与下方【项目描述】的距离 ---
 \newlength{\intraProjectTitleSep}
-\setlength{\intraProjectTitleSep}{0.4em} % <--- 在此调整标题和描述的距离
+\setlength{\intraProjectTitleSep}{0.4em}
 \newcommand{\titlebreak}{\\[\intraProjectTitleSep]}
 
-% --- 用于控制【项目描述】与下方【要点列表】的距离 ---
 \newlength{\intraProjectListTopSep}
-\setlength{\intraProjectListTopSep}{0.2em} % <--- 在此调整描述和列表的距离
+\setlength{\intraProjectListTopSep}{0.2em}
 
-% =======================================================================
-
-
-\titleformat{\section}         % 定制 \section 命令 
-{\large\bfseries\raggedright} % 将 section 标题设置为大号、粗体且左对齐
-{}{0em}                      % 可用于为所有 section 添加前缀（如“章节...”）
-{}                           % 可用于在标题前插入代码
-[{\color{CVBlue}\titlerule}]  % 在标题后插入一条横线
+\titleformat{\section}
+{\large\bfseries\raggedright}
+{}{0em}
+{}
+[{\color{CVBlue}\titlerule}]
 \titlespacing*{\section}{0cm}{*1.6}{*1.2}
 
 \begin{document}
@@ -90,58 +81,73 @@
     \node[anchor = north west] at ($(current page.north west)+(0.5cm,+1.0cm)$) {\includegraphics[height=6cm]{zju.png}};
 \end{tikzpicture}%
 
-\centerline{\LARGE\bfseries{Qiudan Wu}} 
+\centerline{\LARGE\bfseries{吴秋丹}} 
 
 \centerline{\normalsize{\faPhone\ +86 18157306768 \quad \faEnvelopeO\ \href{mailto:3230100423@zju.edu.cn}{3230100423@zju.edu.cn}}} 
     
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ Education}    
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faGraduationCap}\ 教育背景}    
 
-\textbf{Zhejiang University} \hfill Sep 2023 -- Present\\[0.5em]
-B.S. in Environmental Science (Minor in Big Data and Data Science), Junior
+\textbf{浙江大学} \hfill 2023年9月 -- 至今\\[0.5em]
+环境科学专业本科在读，辅修大数据与数据科学，现为大三学生
 
 \begin{itemize}[nosep]
-    \item \textbf{GPA}: 4.73/5.0, ranked 1st in major (consistently); \textbf{English}: TOEFL 108, CET-6: 604
-    \item \textbf{Core Courses}: Physical Chemistry (5.0), Organic Chemistry (5.0), Probability and Statistics (5.0), Calculus (5.0), Linear Algebra (5.0), Data Structures (4.8), Ordinary Differential Equations (5.0)
+    \item \textbf{成绩排名}：GPA 4.73/5.0，专业排名第1；\textbf{英语水平}：托福 108，大学英语六级 604
+    \item \textbf{核心课程}：物理化学（5.0）、有机化学（5.0）、概率论与数理统计（5.0）、微积分（5.0）、线性代数（5.0）、数据结构（4.8）、常微分方程（5.0）
 \end{itemize}
 
-\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ Research Experience}
+\section{\makebox[\widthof{\faUsers}][c]{\color{CVBlue}\faUsers}\ 科研经历}
 
-\textbf{Impact of the Montreal Protocol on Global Microplastic Distribution and Modeling (SRTP, PI)} \hfill Aug 2024 -- Present \titlebreak
-Investigated the indirect environmental impact of the Montreal Protocol on global microplastic pollution. Constructed high-resolution UV radiation datasets by integrating ozone layer dynamics. Built machine learning models linking environmental factors to microplastic concentration and developed a process-based model (UV radiation → plastic degradation → microplastic generation). Conducted scenario analysis using the TUV model.
+\textbf{蒙特利尔议定书对全球微塑料分布的影响及建模研究（SRTP，项目负责人）} \hfill 2024年8月 -- 至今 \titlebreak
+围绕蒙特利尔议定书对全球微塑料污染的间接环境影响开展研究。通过整合臭氧层动态变化信息，构建高分辨率紫外辐射数据集；建立机器学习模型，刻画环境因子与微塑料浓度之间的关系；进一步构建“紫外辐射—塑料降解—微塑料生成”的过程机制模型，并基于 TUV 模型开展情景分析。
 
 \begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{Outputs}: One research report; one academic paper; developed skills in data processing, modeling, and scientific research workflows.
+    \item \textbf{阶段成果}：完成研究报告一份、学术论文一篇；系统提升了数据处理、环境建模与科研工作流实践能力。
 \end{itemize}
 
 \projectsep
 
-\textbf{LLM Experience Computing and Design Lab Internship – Interface Consistency Evaluation} \hfill Nov 2025 -- Present \titlebreak
-Participated in a project using large language models to automatically detect inconsistencies across e-commerce interfaces. Built evaluation datasets, defined inconsistency taxonomy, and improved model performance via prompt engineering. Applied LangGraph for agent design.
+\textbf{Liquid Time：基于 Patch 的液态神经网络长时间序列预测模型} \hfill 2026年1月 -- 至今 \titlebreak
+提出 Liquid Time，一种面向长时间序列预测的端到端建模框架，将 patch 级时间表征学习与基于 CfC 的连续时间递归动态建模相结合，以提升长预测跨度下的鲁棒预测能力；已完成完整学术论文撰写，并投稿至 EI 检索会议。
 
-\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
-    \item \textbf{Outputs}: Constructed UI consistency dataset; improved programming and LLM application skills.
+\begin{itemize}
+    \item \textbf{模型框架}：集成 RevIN 归一化、时间 patch 嵌入、基于 CfC 的动态编码器以及轻量级 MLP 预测头，以改善非平稳时间序列条件下的长期预测性能。
+    \item \textbf{核心思想}：设计 patch 级 CfC 建模策略，将长历史序列压缩为局部时间单元，并学习 patch 之间的连续时间转移关系，在降低递归建模深度的同时保留局部抽象能力与长程时间动态。
+    \item \textbf{实验结果}：在六个公开基准数据集上取得持续具有竞争力的结果；在 ETTh1 数据集全部预测长度上取得最优 MSE，并在 ETTh1-336 与 ETTh2-336 设置下相较最强竞争基线分别降低 MSE 9.7\% 与 12.1\%。
+    \item \textbf{模型分析}：完成消融实验与超参数敏感性分析，验证 patch 划分、CfC 骨干网络、RevIN 归一化、预测头设计以及位置编码对模型性能的贡献。
 \end{itemize}
 
 \projectsep
 
-\textbf{PatchTST-LNN: Time Series Forecasting with Liquid Neural Networks} \hfill Jan 2026 -- Present \titlebreak
-Proposed PatchTST-LNN by replacing the Transformer encoder with Liquid Neural Networks (CfC units). Retained RevIN and Patch structure for efficient and interpretable time series modeling.
+\textbf{LLM 体验计算与设计实验室实习：界面一致性与界面复杂度评估} \hfill 2025年11月 -- 至今 \titlebreak
+参与基于大语言模型的界面一致性评估与界面复杂度评估研究，面向真实电商与短视频应用场景开展业务界面分析。参与数据集构建、不一致性分类体系设计、提示词工程与实验执行等工作。
 
-\begin{itemize}
-    \item \textbf{Architecture}: Replaced attention mechanism with LNN to reduce computational complexity and improve adaptability.
-    \item \textbf{Ablation Study}: Evaluated Patch vs non-Patch, LNN vs Linear heads, validating effectiveness.
-    \item \textbf{Performance}: Achieved competitive or state-of-the-art results on ETTh1, ETTh2, and ETTm1 benchmarks.
+\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
+    \item \textbf{界面一致性评估}：构建用于检测电商界面 UI 不一致问题的评估数据集，设计界面不一致类别，并通过提示词工程提升基于 LLM 的评估效果。
+    \item \textbf{界面复杂度评估}：协助运行并验证抖音相关业务界面的操作复杂度评估代码，支持对用户交互复杂度的量化分析。
+    \item \textbf{工具与能力}：使用 LangGraph 进行智能体工作流设计，积累了 LLM 评估管线、数据标注与实验分析的实践经验。
 \end{itemize}
 
-\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ Honors and Awards}
+\projectsep
+
+\textbf{基于大语言模型的逆合成预测与路径规划研究} \hfill 2026年3月 -- 至今 \titlebreak
+参与基于大语言模型的逆合成预测研究，重点开展 RetroDFM 微调、单步逆合成基准测试以及多步合成路径规划的初步探索。
+
+\begin{itemize}[nosep, topsep=\intraProjectListTopSep]
+    \item \textbf{单步逆合成预测}：接手并梳理现有 RetroDFM 实验管线，包括 LoRA 微调、预测结果生成以及基准数据集上的 Top-k 准确率评估。
+    \item \textbf{模型优化}：支持开展微调配置的对照实验，包括 LoRA rank、LoRA alpha、学习率、批大小与训练轮数等参数，以提升逆合成预测性能。
+    \item \textbf{数据处理}：协助将实验管线适配至更大规模的 BioChem/BioNavi 相关数据集，包括处理数据集中特殊字符并准备模型输入输出文件。
+    \item \textbf{路径规划探索}：阅读多步逆合成、原子映射与 Retro* 搜索相关文献，参与分析 BioNavi 路径预测中的潜在失败模式。
+\end{itemize}
+
+\section{\makebox[\widthof{\faGraduationCap}][c]{\color{CVBlue}\faList}\ 荣誉奖励}
 
 \begin{itemize}
-    \item Summer Program, E-Commerce and Social Media Strategy, Nanyang Technological University \hfill Aug 2024
-    \item Third Prize, National Undergraduate Mathematics Competition (Non-Math A) \hfill Dec 2023
-    \item Third Prize, Zhejiang Provincial Physics Innovation Competition \hfill Dec 2023
-    \item Mathematical Contest in Modeling (MCM) \hfill Jan 2026
-    \item Second-Class Scholarship (Zhejiang University) \hfill Oct 2024
-    \item Provincial Government Scholarship; Environmental Science Scholarship \hfill Oct 2025
+    \item 南洋理工大学 E-Commerce and Social Media Strategy 暑期项目 \hfill 2024年8月
+    \item 全国大学生数学竞赛非数学类 A 类三等奖 \hfill 2023年12月
+    \item 浙江省大学生物理创新竞赛三等奖 \hfill 2023年12月
+    \item 美国大学生数学建模竞赛（MCM） \hfill 2026年1月
+    \item 浙江大学二等奖学金 \hfill 2024年10月
+    \item 浙江省政府奖学金；环境科学奖学金 \hfill 2025年10月
 \end{itemize}
 
 \end{document}
